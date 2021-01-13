@@ -15,6 +15,5 @@
     justify-content: center;
 }
 #score {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
