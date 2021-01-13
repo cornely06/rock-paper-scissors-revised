@@ -6,9 +6,9 @@
     </head>
     <body>
         <div id="container">
-        <div class="buttons" id="rock"><p>Rock</p></div>
-        <div class="buttons" id="paper"><p>Paper</p></div>
-        <div class="buttons" id="scissors"><p>Scissors</p></div>
+        <div class="buttons" id="rock"><p><img src="images/rock.svg"></p></div>
+        <div class="buttons" id="paper"><p><img src="images/paper.svg"></p></div>
+        <div class="buttons" id="scissors"><p><img src="images/scissors.svg"></p></div>
         </div>
         <!--
         <script>
@@ -77,11 +77,11 @@
             }
             //Write a game function to play and report both the round results
             //and overall winner of a first to 5
-            function game() {
+            function game(buttonClicked) {
                 playerScore = 0;
                 computerScore = 0;
                 while (playerScore < 5 && computerScore < 5) {
-                    playerSelection = playerPlay();
+                    playerSelection = buttonClicked;
                     computerSelection = computerPlay();
                     playRound(computerSelection, playerSelection);
                     console.log(`Player: ${playerScore} Computer: ${computerScore}`);
