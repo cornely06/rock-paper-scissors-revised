@@ -1,0 +1,12 @@
+.buttons {
+    border: 3px solid black;
+    font-size: 3vw;
+    margin: 1vw;
+}
+.buttons p {
+    padding: 5vw;
+}
+#container {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>rock paper scissors</title>
+        <link rel="stylesheet" href="style-desktop.css">
+    </head>
+    <body>
+        <div id="container">
+        <div class="buttons" id="rock"><p>Rock</p></div>
+        <div class="buttons" id="paper"><p>Paper</p></div>
+        <div class="buttons" id="scissors"><p>Scissors</p></div>
+        </div>
+        <!--
+        <script>
+            //Declare a function that randomly selects for the computer
+            function computerPlay() {
+                let choices = ['rock', 'paper', 'scissors'];
+                return choices[Math.floor(Math.random() * 3)];
+            }
+            //Prompt the player selection
+            function playerPlay() {
+                let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+                while (playerChoice !== 'rock' && playerChoice !== 'paper' &&
+                        playerChoice !== 'scissors') {
+                    playerChoice = 
+                            prompt("Please enter 'Rock', 'Paper', or 'Scissors'.");
+                }
+                return playerChoice;
+            }
+            //Declare a function that plays a single round and prints result
+            function playRound(computerSelection, playerSelection){
+                let results;
+                if (computerSelection === 'rock') {
+                    switch(playerSelection) {
+                        case 'rock': 
+                        results = "You Tie!";
+                        break;
+                        case 'paper': 
+                        results = "You Win!  Paper beats Rock";
+                        playerScore++;
+                        break;
+                        case 'scissors': 
+                        results = "You Lose! Rock beats Scissors";
+                        computerScore++;
+                        break;
+                    }
+                } else if (computerSelection === 'paper') {
+                    switch(playerSelection) {
+                        case 'rock': 
+                        results = "You Lose! Paper beats Rock";
+                        computerScore++;
+                        break;
+                        case 'paper': 
+                        results = "You Tie!";
+                        break;
+                        case 'scissors': 
+                        results = "You Win! Scissors beats Paper";
+                        playerScore++;
+                        break;
+                    }
+                } else if (computerSelection === 'scissors') {
+                    switch(playerSelection) {
+                        case 'rock': 
+                        results = "You Win! Rock beats Scissors";
+                        playerScore++;
+                        break;
+                        case 'paper': 
+                        results = "You Lose! Scissors beats Paper";
+                        computerScore++;
+                        break;
+                        case 'scissors': 
+                        results = "You Tie!";
+                        break;
+                    }
+                }
+                console.log(results);
+            }
+            //Write a game function to play and report both the round results
+            //and overall winner of a first to 5
+            function game() {
+                playerScore = 0;
+                computerScore = 0;
+                while (playerScore < 5 && computerScore < 5) {
+                    playerSelection = playerPlay();
+                    computerSelection = computerPlay();
+                    playRound(computerSelection, playerSelection);
+                    console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+                }
+                (playerScore > computerScore) ? 
+                        console.log(`You Win! ${playerScore} - ${computerScore}`) : 
+                        console.log(`You Lose! ${playerScore} - ${computerScore}`);
+            }
+            let playerSelection;
+            let computerSelection;
+            let playerScore;
+            let computerScore;
+            game();
+        </script>
+        -->
+    </body>
+</html>
