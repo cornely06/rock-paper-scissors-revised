@@ -10,6 +10,66 @@
         <div class="buttons" id="paper"><p><img src="images/paper.svg"></p></div>
         <div class="buttons" id="scissors"><p><img src="images/scissors.svg"></p></div>
         </div>
+        <div id="score"></div>
+        <script>
+            function computerPlay() {
+                let choices = ['rock', 'paper', 'scissors'];
+                return choices[Math.floor(Math.random() * 3)];
+            }
+            function playRound(selection) {
+                let results;
+                let computerSelection = computerPlay();
+                if (computerSelection === 'rock') {
+                    switch(selection) {
+                        case 'rock': 
+                        results = "You Tie!";
+                        break;
+                        case 'paper': 
+                        results = "You Win!  Paper beats Rock";
+                        playerScore++;
+                        break;
+                        case 'scissors': 
+                        results = "You Lose! Rock beats Scissors";
+                        computerScore++;
+                        break;
+                    }
+                } else if (computerSelection === 'paper') {
+                    switch(selection) {
+                        case 'rock': 
+                        results = "You Lose! Paper beats Rock";
+                        computerScore++;
+                        break;
+                        case 'paper': 
+                        results = "You Tie!";
+                        break;
+                        case 'scissors': 
+                        results = "You Win! Scissors beats Paper";
+                        playerScore++;
+                        break;
+                    }
+                } else if (computerSelection === 'scissors') {
+                    switch(selection) {
+                        case 'rock': 
+                        results = "You Win! Rock beats Scissors";
+                        playerScore++;
+                        break;
+                        case 'paper': 
+                        results = "You Lose! Scissors beats Paper";
+                        computerScore++;
+                        break;
+                        case 'scissors': 
+                        results = "You Tie!";
+                        break;
+                    }
+                }
+                console.log(results);
+            }
+            let playerScore = 0;
+            let computerScore = 0;
+            document.getElementById("rock").addEventListener("click", () => playRound('rock'));
+            document.getElementById("paper").addEventListener("click", () => playRound('paper'));
+            document.getElementById("scissors").addEventListener("click", () => playRound('scissors'));
+        </script>
         <!--
         <script>
             //Declare a function that randomly selects for the computer
