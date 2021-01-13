@@ -77,11 +77,11 @@
             }
             //Write a game function to play and report both the round results
             //and overall winner of a first to 5
-            function game(buttonClicked) {
+            function game() {
                 playerScore = 0;
                 computerScore = 0;
                 while (playerScore < 5 && computerScore < 5) {
-                    playerSelection = buttonClicked;
+                    playerSelection = playerPlay();
                     computerSelection = computerPlay();
                     playRound(computerSelection, playerSelection);
                     console.log(`Player: ${playerScore} Computer: ${computerScore}`);
