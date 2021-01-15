@@ -72,14 +72,17 @@
                 document.getElementById("score").innerText = `Player: ${playerScore} Computer: ${computerScore}`;
                 if (playerScore === 5) {
                     document.getElementById("results").innerText="You Win!";
+                    document.getElementById("scoreBoard").style.fontSize = "x-large";
                 } else if (computerScore === 5) {
                     document.getElementById("results").innerText="You Lose!";
+                    document.getElementById("scoreBoard").style.fontSize = "x-large";
                 }
                 console.log(results);
             }
             function newGame() {
                 document.getElementById("results").innerText = "";
                 document.getElementById("score").innerText = "";
+                document.getElementById("scoreBoard").style.fontSize = "medium";
                 playerScore = 0;
                 computerScore = 0;
             }
