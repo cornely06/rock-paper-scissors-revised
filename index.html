@@ -10,7 +10,11 @@
         <div class="buttons" id="paper"><p><img src="images/paper.svg"></p></div>
         <div class="buttons" id="scissors"><p><img src="images/scissors.svg"></p></div>
         </div>
-        <div id="score"><p id="results"></p></div>
+        <div id="scoreBoard">
+            <button id="newGame">New Game</button>
+            <p id="results"></p>
+            <p id="score"></p>
+        </div>
         <script>
             function computerPlay() {
                 let choices = ['rock', 'paper', 'scissors'];
@@ -63,24 +67,26 @@
                     }
                 }
                 document.getElementById("results").innerText = results;
-                let para = document.createElement("p");
-                let text = document.createTextNode(`Player: ${playerScore} Computer: ${computerScore}`)
-                para.appendChild(text);
-                document.getElementById("score").appendChild(para);
+                document.getElementById("score").innerText = `Player: ${playerScore} Computer: ${computerScore}`;
                 if (playerScore === 5) {
-                    document.getElementById("results").innerText = "You Win!";
-                    playerScore = 0;
-                    computerScore = 0;
+                    document.getElementById("results").innerText="You Win!";
                 } else if (computerScore === 5) {
-                    document.getElementById("results").innerText = "You Lose!"
+                    document.getElementById("results").innerText="You Lose!";
                 }
                 console.log(results);
+            }
+            function newGame() {
+                document.getElementById("results").innerText = "";
+                document.getElementById("score").innerText = "";
+                playerScore = 0;
+                computerScore = 0;
             }
             let playerScore = 0;
             let computerScore = 0;
             document.getElementById("rock").addEventListener("click", () => playRound('rock'));
             document.getElementById("paper").addEventListener("click", () => playRound('paper'));
             document.getElementById("scissors").addEventListener("click", () => playRound('scissors'));
+            document.getElementById("newGame").addEventListener("click", () => newGame());
         </script>
         <!--
         <script>
