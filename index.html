@@ -10,10 +10,12 @@
         <div class="buttons" id="paper"><p><img src="images/paper.svg"></p></div>
         <div class="buttons" id="scissors"><p><img src="images/scissors.svg"></p></div>
         </div>
-        <div id="scoreBoard">
+        <div class="results">
             <button id="newGame">New Game</button>
+            <div id="scoreBoard">
             <p id="results"></p>
             <p id="score"></p>
+        </div>
         </div>
         <script>
             function computerPlay() {
@@ -77,7 +79,6 @@
                     document.getElementById("results").innerText="You Lose!";
                     document.getElementById("scoreBoard").style.fontSize = "x-large";
                 }
-                console.log(results);
             }
             function newGame() {
                 document.getElementById("results").innerText = "";
